@@ -11,22 +11,23 @@ essa resposta de cálculo. */
 int main(){
     int notas[5], i = 0, soma = 0;
     int diferenca[5];
+    int comprimento = sizeof(notas)/sizeof(notas[0]);
     float media = 0;
 
-    while (i < 5){
+    while (i < comprimento){
         printf("Insira o valor da nota %i...: ", i);
         scanf("%i", &notas[i]);
         soma += notas[i];
         i++;
     }
 
-    media = soma/5;
+    media = soma/comprimento;
     i = 0;
-    printf("A media é...: %.2f", media);
+    printf("A media e...: %.2f", media);
 
-    while(i < 5){
+    while(i < comprimento){
         diferenca[i] = media - notas[i];
-        printf("A diferenca da nota %i com a media %.2f...: %i\n", i, media, diferenca[i]);
+        printf("\n A diferenca da nota %i com a media %.2f...: %i\n", i, media, diferenca[i]);
         i++;
     }
     
