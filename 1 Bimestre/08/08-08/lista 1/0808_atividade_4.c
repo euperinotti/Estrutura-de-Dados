@@ -32,8 +32,10 @@ int main(){
     } else if(opcao == 2){
         printf("Valor total...: %.2f \n", valorCompra);
         printf("Valor com desconto(5%%)...: %.2f", valorCompra - (valorCompra * 0.05));
-    } else {
+    } else if(opcao == 3) {
         printf("Valor total...: %.2f \n", valorCompra);
         printf("Valor sem desconto...: %.2f", valorCompra);
+    } else {
+        printf("Opcao invalida");
     }
 }
