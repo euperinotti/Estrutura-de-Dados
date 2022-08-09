@@ -8,7 +8,7 @@ todos os números múltiplos de N entre os dois limites lidos. (WHILE). */
 #include <stdlib.h>
 
 int main() {
-    int n = 0, limiteInf = 0, limiteSup = 0, i = 0;
+    int n = 0, limiteInf = 0, limiteSup = 0, i = 0, parada = 0;
 
     printf("Informe o valor inicial...: ");
     scanf("%i", &n);
@@ -18,15 +18,13 @@ int main() {
     printf("Informe o limite superior...: ");
     scanf("%i", &limiteSup);
 
+    parada = limiteSup - limiteInf;
 
-    while (i < (limiteSup - limiteInf)){
-        printf("Comecou----------\n");
-        if(n % limiteInf == 0){
+    while (i <= parada){
+        if(limiteInf % n == 0 && limiteInf != 0){
             printf("%i e multiplo de %i \n", limiteInf, n);
         }
         limiteInf += 1;
         i++;
     }
-    
-
 }
