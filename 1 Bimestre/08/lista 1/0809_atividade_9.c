@@ -9,22 +9,23 @@ alta, a nota mais baixa e média da turma. (DO WHILE). */
 #define length 5
 
 int main(){
-    float notas[length], maiorNota = 0, menorNota = 0, media = 0;
+    float notas[length], maiorNota = 0, menorNota = 10, media = 0;
     int i = 0;
 
     do{
-        printf("Digita a nota do aluno %i...: ", i);
+        printf("Digita a nota do aluno %i...: ", i+1);
         scanf("%f", &notas[i]);
 
         if(notas[i] > maiorNota){
             maiorNota = notas[i];
         }
 
-        if(notas[i] < ){
+        if(notas[i] < menorNota){
             menorNota = notas[i];
         }
+
         printf("-------------------\n");
-        printf("O aluno %i tem nota %.2f \n", i, notas[i]);
+        printf("O aluno %i tem nota %.2f \n", i+1, notas[i]);
         printf("-------------------\n");
 
         media += notas[i];
