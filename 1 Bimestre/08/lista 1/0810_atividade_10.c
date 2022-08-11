@@ -16,7 +16,10 @@ No final o exercício deve imprimir todos esses cálculos. (DO WHILE). */
 #define length 5
 
 int main() {
-    int votos[length], i = 0, opcao = 0;
+    int votos[length] = {0,0,0,0,0}; 
+    int i = 0, opcao = 0;
+    float porcentagem[length] = {0,0,0,0,0};
+
     do{
         printf("-----Informe seu canditado----\n");
         printf("[11] Candidato 1\n");
@@ -49,7 +52,14 @@ int main() {
                 break;
         }
 
-        i++;
+        porcentagem[i] = (votos[i]/length) * 100;
 
+        i++;
     } while(i < length);
+    
+    printf("O candidato %i teve %i votos, %.2f%% \n", 11, votos[0], porcentagem[0]);
+    printf("O candidato %i teve %i votos, %.2f%% \n", 22, votos[1], porcentagem[1]);
+    printf("O candidato %i teve %i votos, %.2f%% \n", 33, votos[2], porcentagem[2]);
+    printf("%i votos em branco, %.2f%% \n", 0, votos[3], porcentagem[3]);
+    printf("%i votos em nulo, %.2f%% \n", votos[4], porcentagem[4]);
 }
