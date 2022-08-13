@@ -52,14 +52,31 @@ int main() {
                 break;
         }
 
-        porcentagem[i] = (votos[i]/length) * 100;
-
         i++;
     } while(i < length);
-    
-    printf("O candidato %i teve %i votos, %.2f%% \n", 11, votos[0], porcentagem[0]);
-    printf("O candidato %i teve %i votos, %.2f%% \n", 22, votos[1], porcentagem[1]);
-    printf("O candidato %i teve %i votos, %.2f%% \n", 33, votos[2], porcentagem[2]);
-    printf("%i votos em branco, %.2f%% \n", 0, votos[3], porcentagem[3]);
-    printf("%i votos em nulo, %.2f%% \n", votos[4], porcentagem[4]);
+
+    for(i = 0; i < length; i++){
+        porcentagem[i] = ((float)votos[i]/length) * 100;
+        switch(i){
+            case 0:
+                printf("O candidato %i teve %i votos, %.2f%% \n", 11, votos[i], porcentagem[i]);
+                break;
+
+            case 1:
+                printf("O candidato %i teve %i votos, %.2f%% \n", 22, votos[i], porcentagem[i]);
+                break;
+            
+            case 2:
+                printf("O candidato %i teve %i votos, %.2f%% \n", 33, votos[i], porcentagem[i]);
+                break;
+            
+            case 3:
+                printf("%i votos em branco, %.2f%% \n", votos[i], porcentagem[i]);
+                break;
+            
+            default:
+                printf("%i votos nulo, %.2f%% \n", votos[i], porcentagem[i]);
+                break;
+        }
+    }
 }
