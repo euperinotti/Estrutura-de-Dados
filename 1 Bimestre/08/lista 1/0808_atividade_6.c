@@ -39,7 +39,7 @@ int main() {
     
     case '/':
         printf("Operacao escolhida...: [/] Divisao \n");
-        if(num1 == 0){
+        if(num2 == 0){
             printf("Nao e possivel dividir por 0");
         } else {
             printf("Resultado...: %.2f", num1 / num2);
