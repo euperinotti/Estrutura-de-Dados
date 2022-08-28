@@ -9,16 +9,15 @@
 #define length 3
 
 int main() {
-    char nomes[length] = {'Maior', 'Ze', 'Luiz'};
-    int i = 0;
-    char nome;
 
-    while (i < length) {
-        nome = nomes[i];
-        if(nome == nomes[i]){
-            printf("%s", nomes[i]);
+    char nomes[length][10] = {{"Maior"},{"Ze"},{"Luiz"}};
+    int i, j;
+
+    for(j = 0; j < length; j++){
+        for (i = 0; i < length; i++){
+            if(nomes[j] != nomes[i]){
+                printf("%s x %s \n", nomes[j], nomes[i]);
+            }
         }
-        i++;
     }
-    
 }
