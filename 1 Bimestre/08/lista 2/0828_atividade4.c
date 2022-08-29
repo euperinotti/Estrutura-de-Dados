@@ -9,8 +9,8 @@
 #define length 6
 
 int main(){
-    int vetor[length], pares = 0, i = 0, soma = 0;
-    float media;
+    int vetor[length], pares = 0, impares = 0, i = 0, somaPar = 0, somaImpar = 0;
+    float mediaPar = 0, mediaImpar = 0;
 
     while(i < length){
         printf("Insira um valor inteiro...: ");
@@ -21,13 +21,21 @@ int main(){
     for(i = 0; i < length; i++){
         if(vetor[i] % 2 == 0){
             pares += 1;
-            soma += vetor[i];
+            somaPar += vetor[i];
+        } else {
+            impares += 1;
+            somaImpar += vetor[i];
         }
     }
 
-    media = soma / pares;
+    mediaPar = somaPar / pares;
+    mediaImpar = somaImpar / impares;
 
     printf("Quantidade de pares: %i\n", pares);
-    printf("Soma de pares: %i\n", soma);
-    printf("Media de pares: %.2f\n", media);
+    printf("Soma de pares: %i\n", somaPar);
+    printf("Media de pares: %.2f\n", mediaPar);
+    printf("--------------------\n");
+    printf("Quantidade de impares: %i\n", impares);
+    printf("Soma de impares: %i\n", somaImpar);
+    printf("Media de impares: %.2f\n", mediaImpar);
 }
