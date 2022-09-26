@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECTION SORT</title>
+</head>
+<body>
+    <script>
+
+        let vetor = [15,7,28,9,44,1];
+
+        function selectionSort(array){
+
+            // necessita de dois laços tambem
+            // o externo para controlar a posicao incial atual
+            // o interno fara as comparacoes do atual menor com as demais posicoes
+            // as comparacoes sao feitas da esquerda para a direita, ou,
+            // do i pra frente
+
+            let menor;
+
+            for(let i = 0; i < array.length -1; i++){
+
+                // aqui atribuimos que o menor valor ate entao é o i
+                menor = i; // menor = 3
+                for(let j = i + 1; j < array.length; j++){
+                    // se o array na posicao j(4) for menor que o array na posicao menor(3)
+                    // a variavel menor recebera o valor de j
+
+                    // percorre o array inteiro procurando um valor menor
+
+                    if(array[j] < array[menor]){ // j(4) < menor(3)
+                        menor = j; // menor = 4
+                    }
+                }
+                if (i != menor){
+                    let aux = array[i];
+
+                    array[i] = array[menor];
+                    array[menor] = aux;
+                }
+            }
+            return array;
+        }
+
+        console.log(selectionSort(vetor))
+
+    </script>
+</body>
+</html>

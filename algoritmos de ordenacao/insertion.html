@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSERTION SORT</title>
+</head>
+<body>
+    <script>
+
+        let vetor = [15,7,28,9,44,1];
+
+        function insertionSort(array){
+            let atual; // variavel para armazenar o valor atual
+
+            // laco do insertion sort 
+            // um laco externo para receber cada valor que vai ser reordenado
+            // um laco interno para fazer as comparacoes entre o valor recebido
+            // e os valores posteriores
+
+            // As comparacoes sao feitas da direita para a esquerda, ou,
+            // do ponto i para tras
+
+            for(let i = 1; i < array.length; i++){ // laco é iniciado em 1 pq a posicao 0 nao tem valor anterior para ser comparado
+                let j = i - 1; // j = 0; segundo contador
+                atual = vetor[i]; // atual = 7
+                while(j >= 0 && atual < vetor[j]){ // enquanto j(0) >= 0 e 7 < 15(vetor[j(0)])
+                    vetor[j + 1] = vetor[j]; // vetor[0 + 1 = 1] = vetor[0]
+                    j--; // j = -1
+                }
+
+                // depois que o j sai do laço ele esta valendo -1
+                vetor[j+1] = atual;
+            }
+            return array;
+        }
+
+    </script>
+</body>
+</html>

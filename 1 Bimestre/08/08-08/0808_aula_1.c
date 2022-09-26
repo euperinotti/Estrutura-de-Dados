@@ -5,25 +5,35 @@
 
 int main() {
 
-    int x = 2, y = 3, i;
-    int num[10] = {3,4,6,2,1,6,8,2,9,5};
+    int x = 1, y = 2, i;
+    int num[10] = {9,0,2,2,6,2,1,3,4,2};
     int somaValores = 0, somaPosi = 0;
 
-    num[x] = num[x * y]; // Posicao 2 -> valor 8
-    num[num[x]] = num[x + y]; // Posicao 6 -> valor 8
-    num[y+1] = x + y; // Posicao 4 -> valor 5
-    num[y - x] = num[num[y]]; // Posicao 1 -> valor 8
-    num[y] = num[y] + num[x]; // Posicao 3 -> valor 10
-    num[x - 2] = num[y] + x; // Posicao 0 -> valor 12
+    num[x+y] = num[x]+1; // Posicao 2 -> valor 8
+    num[7] = num[1]+num[2]; // Posicao 6 -> valor 8
+    num[num[x]] = num[y]-num[2]+y; // Posicao 4 -> valor 5
+    num[x+y] = x*y; // Posicao 1 -> valor 8
+    num[3+4] = num[x+y] + 3; // Posicao 3 -> valor 10
+    num[x-1] = x+y+2;
+    num[num[x]+1] = num[x]+num[y];
+    num[num[6]+1] = num[7]+8;
+    num[4*2] = num[3]+num[2];
+    num[1] = num[4]+num[3];
 
     // [12, 8, 8, 10, 5, 6, 8, 2, 6, 5];
 
     for(i = 0; i < 10; i++){
-        if(i % 2 == 0){
+        printf("%d -", num[i]);
+    }
+
+    printf("\n-----------\n");
+
+    for(i = 0; i < 10; i++){
+        if(i % 2 != 0){
             somaPosi += num[i];
         }
 
-        if(num[i] % 2 == 0){
+        if(num[i] % 2 != 0){
             somaValores += num[i];
         }
     }
